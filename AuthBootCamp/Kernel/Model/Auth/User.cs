@@ -21,7 +21,7 @@ namespace Kernel.Model.Auth
 			Name = user.Name;
 			Email = user.Email;
 			Password = user.Password!;
-			Guid = new Guid().ToString();
+			Guid = System.Guid.NewGuid().ToString();
 
 			AuthContext.Get().UserSet.Add(this);
 		}
@@ -62,5 +62,13 @@ namespace Kernel.Model.Auth
 
 			return Task.FromResult(this);
 		}
+		
+		public Task<User> Reset(UserRequest user)
+		{
+			Password = user.Password!;
+			
+			return Task.FromResult(this);
+		}
+		
 	}
 }

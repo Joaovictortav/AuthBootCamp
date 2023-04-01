@@ -44,19 +44,4 @@ public class ManagementFacade : FacadeBase
 			throw new Exception($"Erro: {e.Message}");
 		} 
 	}
-	
-	[HttpPost, Route("ResetPassword")] 
-	[ProducesResponseType(typeof(LoginResponse), StatusCodes.Status200OK)] 
-	public async Task<IActionResult> ResetPassword([FromForm] string email) 
-	{ 
-		try 
-		{
-			object ret = await new ManagementController().ResetPassword(email); 
-			return Json(ret); 
-		} 
-		catch (Exception e) 
-		{ 
-			throw new Exception($"Erro: {e.Message}");
-		} 
-	}
 }
