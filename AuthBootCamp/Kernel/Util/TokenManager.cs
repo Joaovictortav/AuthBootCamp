@@ -17,7 +17,6 @@ namespace Kernel.Util
             {
                 Subject = new ClaimsIdentity(new[] 
                 {
-                    new Claim("subject_type", "user"),
                     new Claim(ClaimTypes.PrimarySid, subjectGuid),
                     new Claim(ClaimTypes.Email, actorEmail),
                     new Claim(ClaimTypes.GivenName, actorName),
@@ -87,11 +86,9 @@ namespace Kernel.Util
 
             return new VerifyResponse
             {
-                SubjectType = session.FindFirst("subject_type")!.Value,
                 SubjectGuid = subjectId,
                 SubjectEmail = session.FindFirst(ClaimTypes.Email)!.Value,
                 SubjectName = session.FindFirst(ClaimTypes.GivenName)!.Value,
-                SubjectPhone = session.FindFirst("subject_phone")!.Value,
                 IssuedAt = iat,
                 ExpiresAt = exp,
             };
@@ -100,11 +97,9 @@ namespace Kernel.Util
 
     public class VerifyResponse
     {
-        public string? SubjectType { get; set; }
         public Guid SubjectGuid { get; set; }
         public string? SubjectEmail { get; set; }
         public string? SubjectName { get; set; }
-        public string? SubjectPhone { get; set; }
         public long ExpiresAt { get; set; }
         public long IssuedAt { get; set; }
     }
