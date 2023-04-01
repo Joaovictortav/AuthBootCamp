@@ -62,5 +62,13 @@ namespace Kernel.Model.Auth
 
 			return Task.FromResult(this);
 		}
+		
+		public Task<User> Reset(UserRequest user)
+		{
+			Password = user.Password!;
+			
+			return Task.FromResult(this);
+		}
+		
 	}
 }
