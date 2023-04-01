@@ -10,7 +10,7 @@ namespace Kernel.Util
         private static readonly string Secret = Convert.ToBase64String(Encoding.ASCII.GetBytes("UmaStringCommaisde128bits"));  // Modificar !!!  SecretManager.GetSecret()
         private static byte[] ByteSecret => Convert.FromBase64String(Secret);
         
-        public static string GenerateJwt(string subjectGuid, string? actorEmail, string? actorName, string? phone, DateTime? expireDate)
+        public static string GenerateJwt(string subjectGuid, string? actorEmail, string? actorName, DateTime? expireDate)
         {
             var securityKey = new SymmetricSecurityKey(ByteSecret);
             var descriptor = new SecurityTokenDescriptor
@@ -21,7 +21,6 @@ namespace Kernel.Util
                     new Claim(ClaimTypes.PrimarySid, subjectGuid),
                     new Claim(ClaimTypes.Email, actorEmail),
                     new Claim(ClaimTypes.GivenName, actorName),
-                    new Claim("subject_phone", string.IsNullOrWhiteSpace(phone) ? "NA" : phone)
                 }),
                 Expires = expireDate ?? DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature)

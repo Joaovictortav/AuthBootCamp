@@ -27,7 +27,7 @@ public class AuthController
             Actor = "user",
             Token = user!.GenerateJwt(expirationDate),
             ExpiresAt = expirationDate,
-            Guid = user.Guid
+            Guid = user.Guid.ToString()
         };
     }
 

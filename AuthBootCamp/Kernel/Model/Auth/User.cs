@@ -10,14 +10,10 @@ namespace Kernel.Model.Auth
 	public sealed class User
 	{
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Column("ID", TypeName = "INT")] public int Id { get; set; } 
-		[Column("Name", TypeName = "VARCHAR(255)"), MaxLength(255), Required] public string? Name { get; set; } 
-		[Column("Password", TypeName = "VARCHAR(255)"), MaxLength(255), Required] public string? Password { get; set; } 
-		[Column("Gender", TypeName = "VARCHAR(1)"), MaxLength(1)] public string? Gender { get; set; } 
-		[Column("BirthDate", TypeName = "DATETIME")] public DateTime? BirthDate { get; set; } 
-		[Column("Email", TypeName = "VARCHAR(100)"), MaxLength(100), Required] public string? Email { get; set; } 
-		[Column("Guid", TypeName = "Char(36)"), Required] public Guid Guid { get; set; } 
-		[Column("Cellphone", TypeName = "VARCHAR(11)"), MaxLength(11)] public string? Cellphone { get; set; } 
-		[Column("HomePhone", TypeName = "VARCHAR(11)"), MaxLength(11)] public string? HomePhone { get; set; }
+		[Column("name", TypeName = "VARCHAR(255)"), MaxLength(255), Required] public string? Name { get; set; } 
+		[Column("password", TypeName = "VARCHAR(255)"), MaxLength(255), Required] public string? Password { get; set; } 
+		[Column("email", TypeName = "VARCHAR(100)"), MaxLength(100), Required] public string? Email { get; set; } 
+		[Column("guid", TypeName = "VARCHAR(36)"), Required] public string Guid { get; set; } 
 
 		public User() { }
 		public User (UserRequest user)
@@ -25,11 +21,7 @@ namespace Kernel.Model.Auth
 			Name = user.Name;
 			Email = user.Email;
 			Password = user.Password!;
-			Cellphone = user.Cellphone;
-			HomePhone = user.HomePhone;
-			Gender = user.Gender;
-			BirthDate = user.BirthDate;
-			Guid = Guid.NewGuid();
+			Guid = new Guid().ToString();
 
 			AuthContext.Get().UserSet.Add(this);
 		}
@@ -40,7 +32,7 @@ namespace Kernel.Model.Auth
 		
 		internal string GenerateJwt(DateTime? expireDate)
 		{
-			return TokenManager.GenerateJwt(Guid.ToString(), Email, Name,Cellphone, expireDate);
+			return TokenManager.GenerateJwt(Guid.ToString(), Email, Name, expireDate);
 		}
 		
 		public static async Task<User?> GetUser(string? email = null, Guid? guid = null)
@@ -56,7 +48,7 @@ namespace Kernel.Model.Auth
 
 			if (guid is not null)
 			{
-				set = set.Where(s => s.Guid == guid.Value);
+				set = set.Where(s => s.Guid == guid.ToString());
 				isNull = false;
 			}
 
@@ -66,11 +58,7 @@ namespace Kernel.Model.Auth
 		public Task<User> Update(UserRequest user)
 		{
 			Name = user.Name;
-			Cellphone = user.Cellphone;
-			HomePhone = user.HomePhone;
 			Password = user.Password!;
-			Gender = user.Gender;
-			BirthDate = user.BirthDate;
 
 			return Task.FromResult(this);
 		}
