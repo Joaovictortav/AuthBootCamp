@@ -21,7 +21,7 @@ namespace Kernel.Model.Auth
 			Name = user.Name;
 			Email = user.Email;
 			Password = user.Password!;
-			Guid = new Guid().ToString();
+			Guid = System.Guid.NewGuid().ToString();
 
 			AuthContext.Get().UserSet.Add(this);
 		}
