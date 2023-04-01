@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Facade\\Facade.csproj": {}
+    "C:\\www\\AuthBootCamp\\AuthBootCamp\\Facade\\Facade.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Facade\\Facade.csproj": {
+    "C:\\www\\AuthBootCamp\\AuthBootCamp\\Facade\\Facade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Facade\\Facade.csproj",
+        "projectUniqueName": "C:\\www\\AuthBootCamp\\AuthBootCamp\\Facade\\Facade.csproj",
         "projectName": "Facade",
-        "projectPath": "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Facade\\Facade.csproj",
-        "packagesPath": "C:\\Users\\joao.santos_cmtecnol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Facade\\obj\\",
+        "projectPath": "C:\\www\\AuthBootCamp\\AuthBootCamp\\Facade\\Facade.csproj",
+        "packagesPath": "C:\\Users\\samuel.soares_cmtecn\\.nuget\\packages\\",
+        "outputPath": "C:\\www\\AuthBootCamp\\AuthBootCamp\\Facade\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\joao.santos_cmtecnol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\samuel.soares_cmtecn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +29,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj": {
-                "projectPath": "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj"
+              "C:\\www\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj": {
+                "projectPath": "C:\\www\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj"
               }
             }
           }
@@ -101,7 +98,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -113,24 +111,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj": {
+    "C:\\www\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj",
+        "projectUniqueName": "C:\\www\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj",
         "projectName": "Kernel",
-        "projectPath": "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj",
-        "packagesPath": "C:\\Users\\joao.santos_cmtecnol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joao.santos_cmtecnol\\Desktop\\BootCamp\\Teste\\AuthBootCamp\\AuthBootCamp\\Kernel\\obj\\",
+        "projectPath": "C:\\www\\AuthBootCamp\\AuthBootCamp\\Kernel\\Kernel.csproj",
+        "packagesPath": "C:\\Users\\samuel.soares_cmtecn\\.nuget\\packages\\",
+        "outputPath": "C:\\www\\AuthBootCamp\\AuthBootCamp\\Kernel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\joao.santos_cmtecnol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\samuel.soares_cmtecn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -210,7 +205,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -219,7 +215,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
