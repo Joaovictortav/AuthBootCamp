@@ -24,8 +24,7 @@ public class ManagementController
     public async Task<bool> CreateUser(UserRequest userRequest)
     {
         await using var context = AuthContext.Get();
-        // _ = new User(userRequest);
-        var s = new User(userRequest);
+        _ = new User(userRequest);
         
         await context.SaveChangesAsync();
         return true;  
